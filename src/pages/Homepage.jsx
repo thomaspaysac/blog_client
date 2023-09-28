@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Article from "../components/Article";
+import ArticleOverview from "../components/ArticleOverview";
 
 const Homepage = () => {
   const [allPosts, setAllPosts] = useState();
@@ -19,7 +19,7 @@ const Homepage = () => {
           {
             allPosts.map((el) => {
               return (
-                <Article key={el._id} post={el} />
+                <ArticleOverview key={el._id} blogPost={el} />
               )
             })
           }
