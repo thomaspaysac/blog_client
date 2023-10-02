@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ArticleBody from "../components/ArticleBody";
 import ArticleComments from "../components/ArticleComments";
+import Header from "../components/Header";
 
 const ArticleFull = () => {
   const [article, setArticle] = useState();
@@ -20,6 +21,7 @@ const ArticleFull = () => {
     } else {
       return (
         <>
+          <Header />
           <ArticleBody blogPost={article.post} />
           <ArticleComments comments={article.comments} />
         </>

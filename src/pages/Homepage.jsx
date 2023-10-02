@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ArticleOverview from "../components/ArticleOverview";
+import Header from "../components/Header";
 
 const Homepage = () => {
   const [allPosts, setAllPosts] = useState();
@@ -34,6 +35,7 @@ const Homepage = () => {
 
   return (
     <>
+      <Header />
       {postsList()}
     </>
   )
