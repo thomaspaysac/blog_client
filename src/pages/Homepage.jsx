@@ -5,7 +5,7 @@ const Homepage = () => {
   const [allPosts, setAllPosts] = useState();
 
   const fetchPosts = async () => {
-    const res = await fetch('https://blogapi-production-5dee.up.railway.app/posts');
+    const res = await fetch('https://blogapi-production-5dee.up.railway.app/posts/public');
     const data = await res.json();
     setAllPosts(data);
   }
