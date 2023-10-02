@@ -27,13 +27,20 @@ const ArticleComments = ({ comments }) => {
       },
       body: JSON.stringify(data),
     });
-    navigateTo(`/post/${id}`);
+    location.reload();
   }
 
   if (!comments.length) {
     return (
       <div>
         No comments(yet)...
+        <div>New comment:
+        <form id='comment_form' onSubmit={submitComment}>
+          <textarea id='text' name='text'></textarea>
+          <button type='submit'>Submit comment</button>
+        </form>
+          
+        </div>
       </div>
     )
   } else {
