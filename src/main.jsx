@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from './App.jsx'
 import Homepage from './pages/Homepage.jsx';
 import ArticleFull from './pages/ArticleFull.jsx';
+import './App.css'
 
 const router = createBrowserRouter([
   {
