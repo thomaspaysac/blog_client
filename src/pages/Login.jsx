@@ -10,7 +10,7 @@ export const Login = () => {
     const form = document.getElementById('login_form');
     const data = {};
     new FormData(form).forEach((value, key) => data[key] = value);
-    await fetch(`https://blogapi-production-5dee.up.railway.app/users/login`, {
+     await fetch(`https://blogapi-production-5dee.up.railway.app/users/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
