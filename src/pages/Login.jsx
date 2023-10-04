@@ -10,14 +10,21 @@ export const Login = () => {
     const form = document.getElementById('login_form');
     const data = {};
     new FormData(form).forEach((value, key) => data[key] = value);
-     await fetch(`https://blogapi-production-5dee.up.railway.app/users/login`, {
+    const req = await fetch(`https://blogapi-production-5dee.up.railway.app/users/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data),
     });
-    navigateTo('/');
+    if (req.status !== 200) {
+      return;
+    } else {
+      const result = await req.json();
+      localStorage.setItem('username', result.userInfo.username);
+      localStorage.setItem('user_id', result.userInfo._id);
+      navigateTo('/');
+    }
   }
 
   return (
