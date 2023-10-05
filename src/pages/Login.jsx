@@ -23,6 +23,9 @@ export const Login = () => {
       const result = await req.json();
       localStorage.setItem('username', result.userInfo.username);
       localStorage.setItem('user_id', result.userInfo._id);
+      localStorage.setItem('role', result.userInfo.role);
+      localStorage.setItem('logged_in', true);
+      console.log(localStorage)
       navigateTo('/');
     }
   }
