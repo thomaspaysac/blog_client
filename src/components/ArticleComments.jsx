@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom"
 const IndividualComment = ({ comment }) => {
   return (
     <div className="individual-comment_container">
-      <p>{comment.author.username}</p>
-      <p>{comment.text}</p>
-      <p>{comment.createdAt_formatted}</p>
+      <div className="individual-comment_metadata">
+        <span className="comment_author">{comment.author.username}</span> 
+        <span className="comment_date"> / {comment.createdAt_formatted}</span>
+      </div>
+      <div className="individual-comment_text">{comment.text}</div>
     </div>
   )
 }
@@ -39,7 +41,8 @@ const CommentCreate = () => {
   }
 
   return (
-    <div>New comment:
+    <div className="comment_create-container">
+      <div>What did you think about this article?</div>
       <form id='comment_form' onSubmit={submitComment}>
         <textarea id='text' name='text'></textarea>
         <button type='submit'>Submit comment</button>
@@ -51,14 +54,16 @@ const CommentCreate = () => {
 const ArticleComments = ({ comments }) => {
   if (!comments.length) {
     return (
-      <div>
+      <div className="comments_section">
+        <h3 className="comments_title">Thoughts</h3>
         <CommentCreate />
-        No comments(yet)...
+        No comments (yet)...
       </div>
     )
   } else {
     return (
-      <>
+      <div className="comments_section">
+        <h3 className="comments_title">Thoughts</h3>
         <CommentCreate />
         <div className="comments_container">
           {
@@ -69,7 +74,7 @@ const ArticleComments = ({ comments }) => {
             })
           }
         </div>
-      </>
+      </div>
       
     )
   }

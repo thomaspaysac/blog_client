@@ -36,7 +36,18 @@ const Homepage = () => {
   return (
     <>
       <Header />
-      {postsList()}
+      <div className="slogan_container">
+        <div>Science, simply explained.</div>
+        <div>
+          <p>Science doesn't need to be complicated!</p>
+          <p>Discover new concepts that will blow your mind.</p>
+        </div>
+      </div>
+      <main>
+        <h2 className="page-title">Latest articles</h2>
+        {postsList()}
+      </main>
+      
     </>
   )
 }

@@ -1,14 +1,14 @@
 const ArticleBody = ({ blogPost }) => {
   return (
-    <div className="article_body">
-      <h1>{blogPost.title}</h1>
-      <div className="blogpost_metadata">
-        <p>published by <strong>{blogPost.author.username}</strong> on {blogPost.createdAt_formatted}</p>
+    <div className="post_body">
+      <h2 className="post_title">{blogPost.title}</h2>
+      <div className="post_metadata">
+        published by <strong>{blogPost.author.username}</strong> on {blogPost.createdAt_formatted}
         {
-          blogPost.updatedAt !== blogPost.createdAt ? <p className="blogpost_edit-info">Edited {blogPost.updatedAt_formatted}</p> : null
+          blogPost.updatedAt !== blogPost.createdAt ? <p className="post_updated"> (updated {blogPost.updatedAt_formatted})</p> : null
         }
       </div>
-      <div className="article_text">
+      <div className="post_text">
         {blogPost.text}
       </div>
     </div>

@@ -7,7 +7,7 @@ const AdminDashboard = () => {
   }
   return (
     <div>
-      Admin
+      (Admin)
     </div>
   )
 }
@@ -26,12 +26,14 @@ const UserContainer = () => {
 
   if (!localStorage.logged_in) {
     return (
-      <Link to="/user/login">Log in</Link>
+      <div className="header_user-container">
+        <button><Link to="/user/login">Log in</Link></button>
+      </div>
     )
   }
   return (
-    <div>
-      <span>{localStorage.username}</span>
+    <div className="header_user-container">
+      <div>connected as <strong>{localStorage.username}</strong></div>
       <AdminDashboard />
       <button onClick={logout}>Logout</button>
     </div>
@@ -42,10 +44,10 @@ const UserContainer = () => {
 
 const Header = () => {
   return (
-    <div>
-      <Link to='/'>Index</Link>
+    <header className="main-header">
+      <div className="header_logo"><Link to='/'>Vulgarized</Link></div>
       <UserContainer />
-    </div>
+    </header>
   )
 }
 

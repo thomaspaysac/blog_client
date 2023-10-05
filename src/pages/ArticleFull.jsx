@@ -17,13 +17,23 @@ const ArticleFull = () => {
 
   const fullarticle = () => {
     if (!article) {
-      return null;
+      return (
+        <>
+          <Header />
+          <main>
+            Article not found.
+          </main>
+        </>
+      )
     } else {
       return (
         <>
           <Header />
-          <ArticleBody blogPost={article.post} />
-          <ArticleComments comments={article.comments} />
+          <main className="post-full">
+            <ArticleBody blogPost={article.post} />
+            <hr />
+            <ArticleComments comments={article.comments} />
+          </main>
         </>
         
       )
