@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
-const Username = () => {
-  if (!localStorage.username) {
+const AdminDashboard = () => {
+  if (localStorage.role !== 'admin') {
     return null;
   }
   return (
-    <span>{localStorage.username}, {localStorage.user_id}</span>
+    <div>
+      Admin
+    </div>
   )
 }
 
-const Header = () => {
+const UserContainer = () => {
   const navigateTo = useNavigate();
 
   const logout = async () => {
@@ -22,12 +24,27 @@ const Header = () => {
     }
   }
 
+  if (!localStorage.logged_in) {
+    return (
+      <Link to="/user/login">Log in</Link>
+    )
+  }
+  return (
+    <div>
+      <span>{localStorage.username}</span>
+      <AdminDashboard />
+      <button onClick={logout}>Logout</button>
+    </div>
+  )
+}
+
+
+
+const Header = () => {
   return (
     <div>
       <Link to='/'>Index</Link>
-      <Link to="/user/login">Log in</Link>
-      <button onClick={logout}>Logout</button>
-      <span>User: <Username /></span>
+      <UserContainer />
     </div>
   )
 }
