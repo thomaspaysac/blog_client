@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ArticleBody from "../components/ArticleBody";
 import ArticleComments from "../components/ArticleComments";
 import Header from "../components/Header";
+import { Footer } from "../components/Footer";
 
 const ArticleFull = () => {
   const [article, setArticle] = useState();
@@ -21,7 +22,7 @@ const ArticleFull = () => {
         <>
           <Header />
           <main>
-            Article not found.
+            Loading article...
           </main>
         </>
       )
@@ -30,10 +31,12 @@ const ArticleFull = () => {
         <>
           <Header />
           <main className="post-full">
+            <h3 className="page-title">Article</h3>
             <ArticleBody blogPost={article.post} />
             <hr />
             <ArticleComments comments={article.comments} />
           </main>
+          <Footer />
         </>
         
       )

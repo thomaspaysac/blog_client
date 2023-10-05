@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header"
+import { Footer } from "../components/Footer";
 
 export const Signup = () => {
   const navigateTo = useNavigate();
@@ -36,7 +37,7 @@ export const Signup = () => {
           <button type='submit'>Sign up</button>
         </form>
       </main>
-      
+      <Footer />
     </>
   )
 }

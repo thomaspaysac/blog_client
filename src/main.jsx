@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage.jsx';
 import ArticleFull from './pages/ArticleFull.jsx';
 import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
+import { Disclaimer } from './pages/Disclaimer.jsx';
 import './App.css'
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     path: '/user/signup',
     element: <Signup />
   },
+  {
+    path: '/disclaimer',
+    element: <Disclaimer />
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

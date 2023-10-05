@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import Header from "../components/Header"
+import { Footer } from "../components/Footer"
 
 export const Login = () => {
   const navigateTo = useNavigate();
@@ -49,7 +50,7 @@ export const Login = () => {
           Don't have an account? <Link to='/user/signup'>Sign up</Link>
         </div>
       </main>
-      
+      <Footer />
     </>
   )
 }

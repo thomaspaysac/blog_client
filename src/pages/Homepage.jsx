@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ArticleOverview from "../components/ArticleOverview";
 import Header from "../components/Header";
+import { Footer } from "../components/Footer";
 
 const Homepage = () => {
   const [allPosts, setAllPosts] = useState();
@@ -47,7 +48,7 @@ const Homepage = () => {
         <h2 className="page-title">Latest articles</h2>
         {postsList()}
       </main>
-      
+      <Footer />
     </>
   )
 }

@@ -45,7 +45,7 @@ const UserContainer = () => {
 const Header = () => {
   return (
     <header className="main-header">
-      <div className="header_logo"><Link to='/'>Vulgarized</Link></div>
+      <div className="header_logo"><Link to='/'>Scientized</Link></div>
       <UserContainer />
     </header>
   )
