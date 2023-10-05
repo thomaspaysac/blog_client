@@ -5,7 +5,6 @@ import Homepage from './pages/Homepage.jsx';
 import ArticleFull from './pages/ArticleFull.jsx';
 import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
-import { Profile } from './pages/Profile.jsx';
 import './App.css'
 
 const router = createBrowserRouter([
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
     path: '/user/signup',
     element: <Signup />
   },
-  {
-    path:'/user/profile',
-    element: <Profile />
-  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -15,7 +15,7 @@ header {
   position: relative;
   border-bottom: 2px solid #333333;
   box-shadow: 0 2px 4px #33333372;
-  padding: 16px;
+  padding: 24px;
 
   button {
     padding: 4px;
@@ -59,7 +59,8 @@ header {
 
 .slogan_container {
   padding: 32px 64px;
-  background-color: #ebebeb7b;
+  background-color: #ebebeb;
+
 
   div {
     &:first-child {
@@ -71,7 +72,9 @@ header {
 }
 
 main {
+  min-height: 100vh;
   padding: 64px 15vw;
+  background-color: #fcfcfc;
 }
 
 .page-title {
@@ -87,6 +90,7 @@ main {
   border-radius: 4px;
   padding: 24px;
   margin: 24px 0;
+  box-shadow: 2px 2px 4px #33333388;
 
   .post-overview_title {
     font-family: 'Young Serif', sans-serif;
@@ -183,6 +187,22 @@ main {
     .individual-comment_text {
       margin-top: 4px;
       font-size: 0.9rem;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 32px 0;
+
+  button {
+    width: 350px;
+    padding: 8px;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

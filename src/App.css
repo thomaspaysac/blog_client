@@ -13,7 +13,7 @@ header {
   position: relative;
   border-bottom: 2px solid #333333;
   box-shadow: 0 2px 4px #33333372;
-  padding: 16px; }
+  padding: 24px; }
   header button {
     padding: 4px; }
     header button:hover {
@@ -42,14 +42,16 @@ header {
 
 .slogan_container {
   padding: 32px 64px;
-  background-color: #ebebeb7b; }
+  background-color: #ebebeb; }
   .slogan_container div:first-child {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 8px; }
 
 main {
-  padding: 64px 15vw; }
+  min-height: 100vh;
+  padding: 64px 15vw;
+  background-color: #fcfcfc; }
 
 .page-title {
   font-family: 'Young Serif', sans-serif;
@@ -62,7 +64,8 @@ main {
   border: 2px solid #ebebeb;
   border-radius: 4px;
   padding: 24px;
-  margin: 24px 0; }
+  margin: 24px 0;
+  box-shadow: 2px 2px 4px #33333388; }
   .post-overview .post-overview_title {
     font-family: 'Young Serif', sans-serif;
     font-weight: 400;
@@ -124,5 +127,16 @@ main {
   .comments_section .individual-comment_container .individual-comment_text {
     margin-top: 4px;
     font-size: 0.9rem; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 32px 0; }
+  .form button {
+    width: 350px;
+    padding: 8px; }
+    .form button:hover {
+      cursor: pointer; }
 
 /*# sourceMappingURL=App.css.map */
