@@ -7,16 +7,32 @@ import { Footer } from "../components/Footer";
 
 const ArticleFull = () => {
   const [article, setArticle] = useState();
+  const [error, setError] = useState(false);
 
   const { id } = useParams();
 
   const fetchArticle = async () => {
     const res = await fetch(`https://blogapi-production-5dee.up.railway.app/posts/${id}`);
+    if (res.status >= 400) {
+      setError(true);
+    }
     const data = await res.json();
     setArticle(data);
   };
 
   const fullarticle = () => {
+    if (error) {
+      return (
+        <>
+          <Header />
+          <main>
+            Error: article not found.
+          </main>
+          <Footer />
+        </>
+      )
+    }
+
     if (!article) {
       return (
         <>
