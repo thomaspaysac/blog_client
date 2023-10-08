@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const IndividualComment = ({ comment }) => {
   return (
@@ -35,7 +35,7 @@ const CommentCreate = () => {
   if (!localStorage.logged_in) {
     return (
       <div>
-        Log in to post new comments.
+        <Link to='/user/login'>Log in</Link> to post new comments.
       </div>
     )
   }
@@ -45,7 +45,7 @@ const CommentCreate = () => {
       <div>What did you think about this article?</div>
       <form id='comment_form' onSubmit={submitComment}>
         <textarea id='text' name='text'></textarea>
-        <button type='submit'>Submit comment</button>
+        <button type='submit' className="button_primary">Submit comment</button>
       </form>
     </div>
   )

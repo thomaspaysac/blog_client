@@ -35,10 +35,37 @@ header {
   header .header_user-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
     font-size: 0.9rem; }
     header .header_user-container a {
       text-decoration: none; }
+
+.button_primary {
+  background-color: #40916d;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 2px solid #40916d;
+  color: #ffffff;
+  font-size: 1rem; }
+  .button_primary:hover, .button_primary:active {
+    background-color: #ffffff;
+    color: #40916d;
+    cursor: pointer; }
+    .button_primary:hover a, .button_primary:active a {
+      color: #40916d; }
+  .button_primary a {
+    color: #ffffff;
+    font-size: 1rem; }
+
+.button_secondary {
+  background-color: #ffffff;
+  color: #40916d;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #40916d;
+  font-size: 1rem; }
+  .button_secondary:hover, .button_secondary:active {
+    background-color: #ebebeb; }
 
 .slogan_container {
   padding: 32px 64px;
@@ -158,8 +185,14 @@ footer {
   background-color: #333333;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 32px;
-  padding: 16px 32px; }
+  padding: 16px; }
+  footer img {
+    height: 32px;
+    transition: transform 500ms ease-in-out; }
+    footer img:hover {
+      transform: rotateZ(360deg); }
   footer a {
     color: #fcfcfc;
     text-decoration: none; }

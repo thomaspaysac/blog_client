@@ -50,12 +50,51 @@ header {
   .header_user-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
     font-size: 0.9rem;
 
     a {
       text-decoration: none;
     }
+  }
+}
+
+.button_primary {
+  background-color: #40916d;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 2px solid #40916d;
+  color: #ffffff;
+  font-size: 1rem;
+
+  &:hover,
+  &:active {
+    background-color: #ffffff;
+    color: #40916d;
+    cursor: pointer;
+
+    a {
+      color: #40916d;
+    }
+  }
+  
+  a {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+}
+
+.button_secondary {
+  background-color: #ffffff;
+  color: #40916d;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #40916d;
+  font-size: 1rem;
+
+  &:hover,
+  &:active {
+    background-color: #ebebeb;
   }
 }
 
@@ -244,8 +283,18 @@ footer {
   background-color: #333333;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 32px;
-  padding: 16px 32px;
+  padding: 16px;
+
+  img {
+    height: 32px;
+    transition: transform 500ms ease-in-out;
+
+    &:hover {
+      transform: rotateZ(360deg);
+    }
+  }
 
   a {
     color: #fcfcfc;

@@ -6,12 +6,14 @@ import ArticleFull from './pages/ArticleFull.jsx';
 import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
 import { Disclaimer } from './pages/Disclaimer.jsx';
+import { ErrorPage } from './pages/ErrorPage.jsx';
 import './App.css'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Homepage />
+    element: <Homepage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: '/post/:id',

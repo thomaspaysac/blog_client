@@ -27,7 +27,7 @@ const UserContainer = () => {
   if (!localStorage.logged_in) {
     return (
       <div className="header_user-container">
-        <button><Link to="/user/login">Log in</Link></button>
+        <button className="button_primary"><Link to="/user/login">Log in</Link></button>
       </div>
     )
   }
@@ -35,7 +35,7 @@ const UserContainer = () => {
     <div className="header_user-container">
       <div>connected as <strong>{localStorage.username}</strong></div>
       <AdminDashboard />
-      <button onClick={logout}>Logout</button>
+      <button onClick={logout} className="button_secondary">Logout</button>
     </div>
   )
 }
