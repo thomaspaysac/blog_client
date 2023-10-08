@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import { Footer } from "../components/Footer"
 
 export const Login = () => {
+  const [error, setError] = useState(false);
   const navigateTo = useNavigate();
+
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
 
   const login = async (e) => {
     e.preventDefault();
@@ -19,7 +24,7 @@ export const Login = () => {
       body: JSON.stringify(data),
     });
     if (req.status !== 200) {
-      return;
+      setError(true);
     } else {
       const result = await req.json();
       localStorage.setItem('username', result.userInfo.username);
@@ -30,11 +35,24 @@ export const Login = () => {
     }
   }
 
+  const ErrorMessage = () => {
+    if (!error) {
+      return null;
+    }
+
+    return (
+      <div className="error_container">
+        Error: check your username and your password.
+      </div>
+    )
+  }
+
   return (
     <>
       <Header />
       <main>
         <h2 className="page-title">Log in</h2>
+        <ErrorMessage />
         <form id='login_form' className="form" onSubmit={login}>
           <div>
             <label htmlFor="username">Username: </label>

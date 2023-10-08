@@ -2,8 +2,29 @@ import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 
 const IndividualComment = ({ comment }) => {
+  const DeleteButton = ({ id }) => {
+    const deleteComment = async () => {
+      if (window.confirm("Do you really want to delete this comment?")) {
+        await fetch(`https://blogapi-production-5dee.up.railway.app/comments/${id}/delete`, 
+        { method: 'DELETE' });
+        location.reload();
+      } else {
+        return;
+      }
+    }
+
+    if (localStorage.user_id === comment.author._id) {
+      return (
+        <button onClick={deleteComment}>X</button>
+      )
+    } else {
+      return null;
+    }
+  }
+
   return (
     <div className="individual-comment_container">
+      <DeleteButton id={comment._id} />
       <div className="individual-comment_metadata">
         <span className="comment_author">{comment.author.username}</span> 
         <span className="comment_date"> / {comment.createdAt_formatted}</span>
