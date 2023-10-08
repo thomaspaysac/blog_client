@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header"
 import { Footer } from "../components/Footer";
 
 export const Signup = () => {
+  const [error, setError] = useState();
   const navigateTo = useNavigate();
 
   const signup = async (e) => {
@@ -17,8 +19,34 @@ export const Signup = () => {
       },
       body: JSON.stringify(data),
     });
-    const res = await req.json();
-    console.log(res);
+    const errors = await req.json();
+    if (errors) {
+      setError(errors);
+    } else {
+      navigateTo('/user/login');
+    }
+  }
+
+  const ErrorMessage = () => {
+    if (!error) {
+      return null;
+    }
+    
+    return (
+      <div className="error_container">
+        <ul>
+        {
+            error.map((el, i) => {
+              return (
+                <li key={i}>
+                  {el.msg}
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    )
   }
 
   return (
@@ -26,6 +54,7 @@ export const Signup = () => {
       <Header />
       <main>
         <h2 className="page-title">Sign up</h2>
+        <ErrorMessage />
         <form id='signup_form' className='form' onSubmit={signup}>
           <div>
             <label htmlFor="username">Username: </label>
