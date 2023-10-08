@@ -10,14 +10,15 @@ export const Signup = () => {
     const form = document.getElementById('signup_form');
     const data = {};
     new FormData(form).forEach((value, key) => data[key] = value);
-    await fetch(`https://blogapi-production-5dee.up.railway.app/users/signup`, {
+    const req = await fetch(`https://blogapi-production-5dee.up.railway.app/users/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data),
     });
-    navigateTo('/user/login');
+    const res = await req.json();
+    console.log(res);
   }
 
   return (

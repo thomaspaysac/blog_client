@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ArticleOverview from "../components/ArticleOverview";
 import Header from "../components/Header";
 import { Footer } from "../components/Footer";
+import logo from "../assets/logo.png"
 
 const Homepage = () => {
   const [allPosts, setAllPosts] = useState();

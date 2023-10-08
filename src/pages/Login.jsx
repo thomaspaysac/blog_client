@@ -7,10 +7,6 @@ export const Login = () => {
   const [error, setError] = useState(false);
   const navigateTo = useNavigate();
 
-  useEffect(() => {
-    console.log(error);
-  }, [error]);
-
   const login = async (e) => {
     e.preventDefault();
     const form = document.getElementById('login_form');

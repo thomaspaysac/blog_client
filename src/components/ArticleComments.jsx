@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
+import deleteIcon from '../assets/delete.png'
 
 const IndividualComment = ({ comment }) => {
   const DeleteButton = ({ id }) => {
     const deleteComment = async () => {
-      if (window.confirm("Do you really want to delete this comment?")) {
+      if (window.confirm("Do you really want to delete your comment?")) {
         await fetch(`https://blogapi-production-5dee.up.railway.app/comments/${id}/delete`, 
         { method: 'DELETE' });
         location.reload();
@@ -15,7 +16,7 @@ const IndividualComment = ({ comment }) => {
 
     if (localStorage.user_id === comment.author._id) {
       return (
-        <button onClick={deleteComment}>X</button>
+        <button onClick={deleteComment} className="button_delete"><img src={deleteIcon} alt='' title='Delete comment' /></button>
       )
     } else {
       return null;
@@ -24,10 +25,10 @@ const IndividualComment = ({ comment }) => {
 
   return (
     <div className="individual-comment_container">
-      <DeleteButton id={comment._id} />
       <div className="individual-comment_metadata">
         <span className="comment_author">{comment.author.username}</span> 
-        <span className="comment_date"> / {comment.createdAt_formatted}</span>
+        <span className="comment_date">{comment.createdAt_formatted}</span>
+        <DeleteButton id={comment._id} />
       </div>
       <div className="individual-comment_text">{comment.text}</div>
     </div>

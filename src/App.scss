@@ -98,6 +98,26 @@ header {
   }
 }
 
+.button_delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid #333333;
+  border-radius: 2px;
+
+  &:hover,
+  &:active {
+    background-color: #d9544fb4;
+    cursor: pointer;
+  }
+  
+  img {
+    height: 16px;
+    width: 16px;
+  }
+}
+
 .error_container {
   background-color: #d9534f;
   color: #ffffff;
@@ -109,7 +129,7 @@ header {
 .slogan_container {
   padding: 32px 64px;
   background-color: #ebebeb;
-
+  position: relative;
 
   div {
     &:first-child {
@@ -234,13 +254,21 @@ main {
   }
 
   .individual-comment_container {
-    border-bottom: 1px solid #333333;
+    border-bottom: 1px solid #33333374;
+    border-left: 1px solid #33333374;
     margin: 16px 0;
     padding: 8px;
     font-size: 0.9rem;
+    border-radius: 4px;
 
     &:nth-child(even) {
-      background-color: #f5f5f5;
+      background-color: #f5f5f5bc;
+    }
+
+    .individual-comment_metadata {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .comment_author {
