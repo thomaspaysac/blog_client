@@ -64,6 +64,10 @@ export const Signup = () => {
             <label htmlFor="password">Password: </label>
             <input type='password' id='password' name='password' />
           </div>
+          <div>
+            <label htmlFor="password_confirm">Confirm password: </label>
+            <input type='password' id='password_confirm' name='password_confirm' />
+          </div>
           <button type='submit' className="button_primary">Sign up</button>
         </form>
       </main>
