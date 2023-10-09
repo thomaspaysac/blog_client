@@ -20,7 +20,7 @@ export const Signup = () => {
       body: JSON.stringify(data),
     });
     const errors = await req.json();
-    if (errors) {
+    if (errors.length > 0) {
       setError(errors);
     } else {
       navigateTo('/user/login');
