@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ArticleOverview = ({ blogPost }) => {
   const textPreview = blogPost.text.substring(0, 500).trim() + '...';
 
@@ -10,7 +12,7 @@ const ArticleOverview = ({ blogPost }) => {
       }
       </div>
       <div className="post-overview_text">{textPreview}</div>
-      <a href={`/post/${blogPost._id}`}>Read full article</a>
+      <Link to={`/post/${blogPost._id}`}>Read full article</Link>
     </div>
   )
 }

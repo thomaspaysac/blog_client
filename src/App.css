@@ -11,9 +11,15 @@ header {
   justify-content: end;
   align-items: center;
   position: relative;
+  z-index: 1;
   border-bottom: 2px solid #40916d;
   box-shadow: 0 2px 4px #40916d9c;
   padding: 24px; }
+  @media (max-width: 480px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px; } }
   header button {
     padding: 4px; }
     header button:hover, header button:active {
@@ -24,6 +30,10 @@ header {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
+    @media (max-width: 480px) {
+      header .header_logo {
+        position: static;
+        transform: translate(0, 0); } }
     header .header_logo a {
       font-family: inherit;
       font-size: 2rem;
@@ -104,6 +114,12 @@ main {
   min-height: 100vh;
   padding: 64px 20vw;
   background-color: #fcfcfc; }
+  @media (max-width: 1024px) {
+    main {
+      padding: 64px 10vw; } }
+  @media (max-width: 768px) {
+    main {
+      padding: 64px 16px; } }
 
 .page-title {
   font-family: 'Young Serif', sans-serif;
@@ -153,7 +169,8 @@ main {
   color: #707070;
   font-style: italic; }
 .post_body .post_text {
-  white-space: pre-wrap; }
+  white-space: pre-wrap;
+  line-height: 150%; }
 
 .comments_section .comments_title {
   font-family: 'Young Serif', sans-serif;

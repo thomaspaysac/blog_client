@@ -13,9 +13,16 @@ header {
   justify-content: end;
   align-items: center;
   position: relative;
+  z-index: 1;
   border-bottom: 2px solid #40916d;
   box-shadow: 0 2px 4px #40916d9c;
   padding: 24px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
 
   button {
     padding: 4px;
@@ -32,6 +39,11 @@ header {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 480px) {
+      position: static;
+      transform: translate(0, 0);
+    }
   
     a {
       font-family: inherit;
@@ -149,6 +161,14 @@ main {
   min-height: 100vh;
   padding: 64px 20vw;
   background-color: #fcfcfc;
+
+  @media (max-width: 1024px) {
+    padding: 64px 10vw;
+  }
+
+  @media (max-width: 768px) {
+    padding: 64px 16px;
+  }
 }
 
 .page-title {
@@ -223,6 +243,7 @@ main {
 
   .post_text {
     white-space: pre-wrap;
+    line-height: 150%;
   }
 }
 
@@ -347,3 +368,4 @@ footer {
     }
   }
 }
+

@@ -7,7 +7,7 @@ const AdminDashboard = () => {
   }
   return (
     <Link to='https://scientized-admin.netlify.app/'>
-      (Admin dashboard)
+      <strong style={{color: '#40916d', textDecoration: 'underline'}}>Admin dashboard</strong>
     </Link>
   )
 }
