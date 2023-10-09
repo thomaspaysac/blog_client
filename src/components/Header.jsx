@@ -6,9 +6,9 @@ const AdminDashboard = () => {
     return null;
   }
   return (
-    <div>
-      (Admin)
-    </div>
+    <Link to='https://scientized-admin.netlify.app/'>
+      (Admin dashboard)
+    </Link>
   )
 }
 
