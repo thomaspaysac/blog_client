@@ -12,7 +12,7 @@ export const Disclaimer = () => {
             This website was created as an full-stack web development exercise. It is made of three parts:
             <ul>
               <li>an API to manage and serve the content (built with Express and MongoDB) ;</li>
-              <li>a CRM website to create new articles (built with React) ;</li>
+              <li>a CMS website to create and edit content (built with React) ;</li>
               <li>a client (this website) to view and interact with the content (built with React).</li>
             </ul>
           </p>
