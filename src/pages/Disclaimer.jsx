@@ -9,7 +9,7 @@ export const Disclaimer = () => {
         <h2 className="page-title">Disclaimer</h2>
         <div className="disclaimer">
           <p>
-            This website was created as an full-stack web development exercise. It is made of three parts:
+            This website was created as a full-stack web development exercise. It is made of three parts:
             <ul>
               <li>an API to manage and serve the content (built with Express and MongoDB) ;</li>
               <li>a CMS website to create and edit content (built with React) ;</li>
