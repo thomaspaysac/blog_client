@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer>
       <Link to='/disclaimer'>Disclaimer</Link>
-      <a href="https://github.com/stagnant-sys"><img src={githubLogo} alt='' title='Find me on GitHub' /></a>
+      <a href="https://github.com/thomaspaysac"><img src={githubLogo} alt='' title='Find me on GitHub' /></a>
       
     </footer>
   )
